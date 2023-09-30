@@ -7,9 +7,9 @@ class PingBot(discord.Client):
     async def on_message(self, message):
         print(f'Message from {message.author}: {message.content}')
 
-intents = discord.Intents.default()
-intents.message_content = True
-
 if __name__ == "__main__":
+    intents = discord.Intents.default()
+    intents.guilds = True  # Enable guild events (optional)
+    intents.message_content = True
     client = PingBot(intents=intents)
-    client.run('my token goes here')
+    client.run('')
